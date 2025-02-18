@@ -27,5 +27,6 @@ public class Niño {
     public String getGenero(){
         return genero;
         }
+
     }
 
