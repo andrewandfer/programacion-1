@@ -1,3 +1,3 @@
-public enum Especialedad {
+public enum Especialidad {
     ODONTOLOGIAGENERAL, ENDODONCIA,ORTODONCIA,CIRUGIAORAL
 }

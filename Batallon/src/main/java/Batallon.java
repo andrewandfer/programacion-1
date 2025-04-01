@@ -110,6 +110,7 @@ public class Batallon {
 
         }
         return null;
+        //commit
     }
 
     public boolean actualizarVehiculo(Vehiculo vehiculoActualizar) {
