@@ -2,7 +2,7 @@ public class VehiculoTransporteTropas extends Vehiculo {
 
     private int capacidadSoldados;
 
-    public VehiculoTransporteTropas(String id, String modelo, String fechafabricacion, String kilometraje, int capacidadSoldados, EstadoOperativo estadoOperativo ) {
+    public VehiculoTransporteTropas(String id, String modelo, String fechafabricacion, int kilometraje, int capacidadSoldados, EstadoOperativo estadoOperativo ) {
         super(id, modelo, fechafabricacion, kilometraje, estadoOperativo);
         this.capacidadSoldados = capacidadSoldados;
     }
