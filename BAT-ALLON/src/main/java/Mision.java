@@ -4,7 +4,7 @@ import java.util.LinkedList;
 public class Mision {
     private LocalDate fecha;
     private String ubicacion;
-    private LinkedList<String> personalAsignado;
+    private LinkedList<Soldado> personalAsignado;
     private String id;
     private Vehiculo vehiculo;
 
@@ -42,11 +42,11 @@ public class Mision {
         this.vehiculo = vehiculo;
     }
 
-    public LinkedList<String> getPersonalAsignado() {
+    public LinkedList<Soldado> getPersonalAsignado() {
         return personalAsignado;
     }
 
-    public void setPersonalAsignado(LinkedList<String> personalAsignado) {
+    public void setPersonalAsignado(LinkedList<Soldado> personalAsignado) {
         this.personalAsignado = personalAsignado;
     }
 

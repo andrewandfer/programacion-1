@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.LinkedList;
 
+
 public class Batallon {
     private String nombre;
     private LocalDate fecha;
@@ -10,6 +11,7 @@ public class Batallon {
     private LinkedList<VehiculoApoyo> listaVehiculoApoyo;
     private LinkedList<VehiculoBlindado> listaVehiculoBlindado;
     private LinkedList<VehiculoTransporteTropas> listaVehiculoTransporteTropas;
+    private LinkedList<Soldado> personalAsignado;
 
 
     public Batallon(String nombre, LocalDate fecha, String ubicacion) {
@@ -21,6 +23,8 @@ public class Batallon {
         this.listaVehiculoApoyo = listaVehiculoApoyo;
         this.listaVehiculoBlindado = listaVehiculoBlindado;
         this.listaVehiculoTransporteTropas = listaVehiculoTransporteTropas;
+        this.personalAsignado = personalAsignado;
+
 
     }
 
@@ -86,6 +90,14 @@ public class Batallon {
 
     public void setVehiculoTransporteTropas(LinkedList<VehiculoTransporteTropas> vehiculoTransporteTropas) {
         this.listaVehiculoTransporteTropas = vehiculoTransporteTropas;
+    }
+
+    public LinkedList<Soldado> getPersonalAsignado() {
+        return personalAsignado;
+    }
+
+    public void setPersonalAsignado(LinkedList<Soldado> personalAsignado) {
+        this.personalAsignado = personalAsignado;
     }
 
     @Override
@@ -285,14 +297,44 @@ public class Batallon {
 
     public LinkedList<Mision> buscarMisionesPorFechaYUbicacion(LocalDate fechaBuscada, String ubicacionBuscada) {
         LinkedList<Mision> misionesEncontradas = new LinkedList<>();
-        for(Mision mision:misiones) {
-            if(mision.getFecha().equals(fechaBuscada)&&mision.getUbicacion().equals(ubicacionBuscada)) {
+        for (Mision mision : misiones) {
+            if (mision.getFecha().equals(fechaBuscada) && mision.getUbicacion().equals(ubicacionBuscada)) {
                 misionesEncontradas.add(mision);
             }
         }
-    return misionesEncontradas;
+        return misionesEncontradas;
     }
+
+    public LinkedList soldadoEspecialidad(Soldado soldado) {
+        LinkedList<Soldado> soldadoEspecialidad = new LinkedList<>();
+        for (Soldado soldadoaux : personalAsignado) {
+            if (soldadoaux.getFuncion().equals(soldado.getFuncion())) {
+                soldadoEspecialidad.add(soldadoaux);
+            }
+        }
+        return soldadoEspecialidad;
+    }
+
+    public Soldado buscarSoldado(Soldado soldadobuscar) {
+        for (Soldado soldado : personalAsignado) {
+            if (soldado.getId().equals(soldadobuscar.getId())) {
+                return soldado;
+            }
+        }
+        return null;
+    }
+    public LinkedList soldadoRango(Soldado soldado) {
+        LinkedList<Soldado> soldadoRango = new LinkedList<>();
+        for (Soldado soldadoRan : personalAsignado) {
+            if (soldadoRan.getRango().equals(soldado.getRango())&&soldadoRan.isDisponible()) {
+                soldadoRango.add(soldadoRan);
+            }
+        }
+        return soldadoRango;
+    }
+    public int
 }
+
 
 
 
