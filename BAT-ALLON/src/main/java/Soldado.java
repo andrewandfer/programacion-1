@@ -4,15 +4,23 @@ public class Soldado {
     private Rango rango;
     private Funcion funcion;
     private int edad;
-    boolean disponible;
+    EstadoSoldado estado;
 
-    public Soldado(String id, String nombre, Rango rango, Funcion funcion, int edad, boolean disponible) {
+    public Soldado(String id, String nombre, Rango rango, Funcion funcion, int edad, EstadoSoldado estado) {
         this.id = id;
         this.nombre = nombre;
         this.rango = rango;
         this.funcion = funcion;
         this.edad = edad;
-        this.disponible = disponible;
+        this.estado = estado;
+    }
+
+    public Rango getRango() {
+        return rango;
+    }
+
+    public void setRango(Rango rango) {
+        this.rango = rango;
     }
 
     public String getId() {
@@ -31,14 +39,6 @@ public class Soldado {
         this.nombre = nombre;
     }
 
-    public Rango getRango() {
-        return rango;
-    }
-
-    public void setRango(Rango rango) {
-        this.rango = rango;
-    }
-
     public Funcion getFuncion() {
         return funcion;
     }
@@ -55,12 +55,12 @@ public class Soldado {
         this.edad = edad;
     }
 
-    public boolean isDisponible() {
-        return disponible;
+    public EstadoSoldado getEstado() {
+        return estado;
     }
 
-    public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
+    public void setEstado(EstadoSoldado estado) {
+        this.estado = estado;
     }
 
     @Override
@@ -71,7 +71,7 @@ public class Soldado {
                 ", rango=" + rango +
                 ", funcion=" + funcion +
                 ", edad=" + edad +
-                ", disponible=" + disponible +
+                ", estado=" + estado +
                 '}';
     }
 }

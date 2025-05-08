@@ -1,24 +1,40 @@
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.LinkedList;
 
+import java.time.LocalDate;
+import java.util.LinkedList;
+import java.util.ArrayList;
+
 public class Mision {
+
+    private String id;
     private LocalDate fecha;
     private String ubicacion;
-    private LinkedList<Soldado> personalAsignado;
-    private String id;
-    private Vehiculo vehiculo;
+    private LinkedList<Soldado> personal;
+    private Vehiculo theVehiculo;
 
-        public Mision(LocalDate fecha, String ubicacion, String id) {
+
+
+
+    public Mision(String id, LocalDate fecha, String ubicacion) {
+        this.id = id;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
-        this.personalAsignado = personalAsignado;
-        this.vehiculo = vehiculo;
-        this.id = id;
+        personal = new LinkedList<>();
 
-        personalAsignado = new LinkedList<>();
     }
 
-        public LocalDate getFecha() {
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public LocalDate getFecha() {
         return fecha;
     }
 
@@ -34,39 +50,23 @@ public class Mision {
         this.ubicacion = ubicacion;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public LinkedList<Soldado> getPersonal() {
+        return personal;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setPersonal(LinkedList<Soldado> personal) {
+        this.personal = personal;
     }
 
-    public LinkedList<Soldado> getPersonalAsignado() {
-        return personalAsignado;
+
+
+    public Vehiculo getTheVehiculo() {
+        return theVehiculo;
     }
 
-    public void setPersonalAsignado(LinkedList<Soldado> personalAsignado) {
-        this.personalAsignado = personalAsignado;
+    public void setTheVehiculo(Vehiculo theVehiculo) {
+        this.theVehiculo = theVehiculo;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "Mision{" +
-                "fecha='" + fecha + '\'' +
-                ", ubicacion='" + ubicacion + '\'' +
-                ", personalAsignado=" + personalAsignado +
-                ", vehiculo=" + vehiculo +
-                ", codigoMision='" + id + '\'' +
-                '}';
-    }
 }
 

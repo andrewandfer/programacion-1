@@ -1,19 +1,25 @@
+
+import java.util.LinkedList;
+
 public abstract class Vehiculo {
 
-    private String id;
-    private String modelo;
-    private String fechafabricacion;
-    private int kilometraje;
-    private EstadoOperativo estadoOperativo;
-    private int misionesCompletadas;
+    protected String id;
+    protected String modelo;
+    protected int anioFabricacion;
+    protected double kilometraje;
+    protected int misionesCompletadas;
+    protected EstadoOperativo estadoOperativo;
+    protected LinkedList<Mision> listaMisiones;
 
-    public Vehiculo(String id, String modelo, String fechafabricacion, int kilometraje, EstadoOperativo estadoOperativo) {
+    public Vehiculo(String id, String modelo, int anioFabricacion, double kilometraje, int misionesCompletadas,
+                    EstadoOperativo estadoOperativo) {
         this.id = id;
         this.modelo = modelo;
-        this.fechafabricacion = fechafabricacion;
+        this.anioFabricacion = anioFabricacion;
         this.kilometraje = kilometraje;
-        this.misionesCompletadas = 0;
+        this.misionesCompletadas = misionesCompletadas;
         this.estadoOperativo = estadoOperativo;
+        listaMisiones = new LinkedList<>();
     }
 
     public String getId() {
@@ -32,28 +38,20 @@ public abstract class Vehiculo {
         this.modelo = modelo;
     }
 
-    public String getFechafabricacion() {
-        return fechafabricacion;
+    public int getAnioFabricacion() {
+        return anioFabricacion;
     }
 
-    public void setFechafabricacion(String fechafabricacion) {
-        this.fechafabricacion = fechafabricacion;
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
     }
 
-    public int getKilometraje() {
+    public double getKilometraje() {
         return kilometraje;
     }
 
-    public void setKilometraje(int kilometraje) {
+    public void setKilometraje(double kilometraje) {
         this.kilometraje = kilometraje;
-    }
-
-    public EstadoOperativo getEstadoOperativo() {
-        return estadoOperativo;
-    }
-
-    public void setEstadoOperativo(EstadoOperativo estadoOperativo) {
-        this.estadoOperativo = estadoOperativo;
     }
 
     public int getMisionesCompletadas() {
@@ -64,15 +62,25 @@ public abstract class Vehiculo {
         this.misionesCompletadas = misionesCompletadas;
     }
 
-    @Override
-    public String toString() {
-        return "Vehiculo{" +
-                "id='" + id + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", fechafabricacion='" + fechafabricacion + '\'' +
-                ", kilometraje='" + kilometraje + '\'' +
-                ", estadoOperativo=" + estadoOperativo +
-                ", misionesCompletadas='" + misionesCompletadas + '\'' +
-                '}';
+    public EstadoOperativo getEstadoOperativo() {
+        return estadoOperativo;
     }
+
+    public void setEstadoOperativo(EstadoOperativo estadoOperativo) {
+        this.estadoOperativo = estadoOperativo;
+    }
+
+    public LinkedList<Mision> getListaMisiones() {
+        return listaMisiones;
+    }
+
+    public void setListaMisiones(LinkedList<Mision> listaMisiones) {
+        this.listaMisiones = listaMisiones;
+    }
+
+
+
+
+
 }
+

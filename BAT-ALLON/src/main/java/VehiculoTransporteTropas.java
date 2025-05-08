@@ -2,8 +2,8 @@ public class VehiculoTransporteTropas extends Vehiculo {
 
     private int capacidadSoldados;
 
-    public VehiculoTransporteTropas(String id, String modelo, String fechafabricacion, String kilometraje, int capacidadSoldados, EstadoOperativo estadoOperativo ) {
-        super(id, modelo, fechafabricacion, kilometraje, estadoOperativo);
+    public VehiculoTransporteTropas(String id, String modelo, int anioFabricacion, double kilometraje, int misionesCompletadas, EstadoOperativo estadoOperativo, int capacidadSoldados) {
+        super(id, modelo, anioFabricacion, kilometraje, misionesCompletadas, estadoOperativo);
         this.capacidadSoldados = capacidadSoldados;
     }
 
@@ -15,16 +15,10 @@ public class VehiculoTransporteTropas extends Vehiculo {
         this.capacidadSoldados = capacidadSoldados;
     }
 
-
     @Override
     public String toString() {
-        return super.toString() +" VehiculoTransporteTropas{" +
-                "capacidadSoldados='" + capacidadSoldados + '\'' +
+        return "VehiculoTransporteTropas{" +
+                "capacidadSoldados=" + capacidadSoldados +
                 '}';
     }
-
-
-
-
-
 }

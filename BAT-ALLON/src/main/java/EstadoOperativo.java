@@ -1,3 +1,7 @@
 public enum EstadoOperativo {
-    DISPONIBLE,ENMISION,MANTENIMIENTO
+    DISPONIBLE,
+    EN_MISION,
+    MANTENIMIENTO;
+
+    public static final EstadoOperativo OPERATIVO = DISPONIBLE;
 }
